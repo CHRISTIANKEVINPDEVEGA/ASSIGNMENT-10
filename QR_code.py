@@ -4,7 +4,13 @@ import qrcode
 import cv2 
 import datetime
 
-txt=open("Contact_data.txt").read()
-img = qrcode.make(txt)  
-img.save("some_file.png")
- 
+with open("Contact_data.txt") as lines:
+    data_per_line = lines.read()
+
+QR_img =qrcode.make(data_per_line)
+QR_img.save("My_QR.png")
+
+
+
+
+
