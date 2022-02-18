@@ -29,7 +29,7 @@ def output_(Scanner_img_cap):
             contact_file_storage.write(f"Contact was saved and scanned on:\n" + DATE_TIME_saved.strftime("%c")+"\n\n\n\n\n")
             contact_file_storage.close    
     
-    return output_
+
 
 #The function that opens the camera
 def Scanning_func():
