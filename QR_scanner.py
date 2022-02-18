@@ -15,8 +15,9 @@ def Scanning_func():
     for QR_code in decoded_QR:
         string_decoded_QR = QR_code.data.decode("utf-8")
         print(string_decoded_QR)
-        x_value, y_value , width, height = QR_code.rect
-        cv2.rectangle(frame, (x_value, y_value),(x_value+width, y_value+height), (300, 0, 280), 10)
+        pts = np.array([QR_code.polygon],np.int32)
+        pts =pts.reshape((-1,1,2))
+        cv2.polylines(frame,[pts],True,(200,0,100),5)
 
     cv2.imshow("QR_scanner.py", frame)
     key=cv2.waitKey(1)
